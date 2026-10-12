@@ -184,7 +184,93 @@ JOIN Products p
 В одному запиті об’єднано:
 Sales + Customers + Products.
 
-<img width="1430" height="894" alt="597DA900-9054-
+<img width="1430" height="811" alt="0585608A-594B-4343-9163-1F30C097A8FE" src="https://github.com/user-attachments/assets/de138513-39fa-4e58-a9e6-936ee6dc59d7" />
 
-<img width="1430" height="810" alt="48E9501D-8473-45FB-8315-BBBE6FAD92AA" src="https://github.com/user-attachments/assets/f0c29fb8-f63a-49f5-ac88-9eb0129f1b37" />
-4934-A765-C466D667C32A" src="https://github.com/user-attachments/assets/8417e3c9-252f-420f-824b-75918ee8e69d" />
+JOIN + WHERE + GROUP BY
+ 
+SELECT
+   p.Product_Name,
+   SUM(s.Quantity * s.Price) AS Revenue
+FROM Sales s
+JOIN Products p
+   ON s.Product_ID = p.Product_ID
+WHERE s.Status = ‘Completed’
+GROUP BY p.Product_Name;
+Цей запит демонструє одночасне використання:
+JOIN + WHERE + GROUP BY + SUM.
+
+<img width="1430" height="810" alt="B6AE4D15-4608-4C8F-87D7-FDA8F080024B" src="https://github.com/user-attachments/assets/56f6b92d-1a7a-4649-92be-8040ea481e25" />
+
+ 
+ 
+ 
+Повний workflow:
+ 
+Raw Data
+↓
+Power Query — очищення та трансформація
+↓
+Data Model — Sales / Products / Customers
+↓
+DAX — KPI та бізнес-метрики
+↓
+SQL — SELECT / WHERE / JOIN / GROUP BY
+↓
+Power BI Dashboard
+↓
+Sales Analysis
+ 
+Навички, продемонстровані в проєкті
+ 
+Power BI
+- створення Dashboard;
+- створення візуалізацій;
+- KPI Cards;
+- Slicers;
+- аналіз за датами, містами та продуктами.
+ 
+Power Query
+ 
+- очищення даних;
+- стандартизація значень;
+- трансформація даних;
+- створення розрахункового стовпця;
+- робота з Applied Steps.
+ 
+DAX
+ 
+- створення Measures;
+- агрегування даних;
+- розрахунок Revenue;
+- Orders;
+- Average Order Value;
+- Profit;
+- Profit Margin;
+- фільтрація через CALCULATE.
+ 
+Data Modeling
+ 
+- робота з декількома таблицями;
+- створення relationships;
+- використання ключів для зв’язку таблиць.
+ 
+SQL
+ 
+- SELECT;
+- WHERE;
+- GROUP BY;
+- JOIN;
+- SUM;
+- об’єднання декількох таблиць.
+ 
+Результат
+ 
+У результаті створено інтерактивний аналітичний звіт, який дозволяє аналізувати:
+- загальну виручку;
+- кількість замовлень;
+- середню вартість замовлення;
+- прибуток;
+- маржинальність;
+- продажі за містами;
+- продажі за продуктами;
+- динаміку виручки в часі.
